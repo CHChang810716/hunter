@@ -3,7 +3,7 @@
 
 include(CMakeParseArguments) # cmake_parse_arguments
 
-include(hunter_status_print)
+include(hunter_status_debug)
 include(hunter_internal_error)
 include(hunter_assert_not_empty_string)
 
@@ -78,7 +78,7 @@ function(hunter_download_server_url)
     string(FIND "${x_URL}" "${list_item}" found)
     if(NOT (found EQUAL "-1"))
       # if in list use the original URL instead of name mangling
-      hunter_status_print("DOWNLOAD_SERVER: \"${x_PACKAGE}\": URL \"${x_URL}\" matches list item \"${list_item}\".")
+      hunter_status_debug("DOWNLOAD_SERVER: \"${x_PACKAGE}\": URL \"${x_URL}\" matches list item \"${list_item}\".")
       set(hunter_main_url "${x_URL}")
     else()
       # append URL to list of download URLs
@@ -115,7 +115,7 @@ function(hunter_download_server_url)
     endif()
   endif()
 
-  hunter_status_print("DOWNLOAD_SERVER: replacing URL
+  hunter_status_debug("DOWNLOAD_SERVER: replacing URL
   PACKAGE: \"${x_PACKAGE}\"
   VERSION: \"${x_VERSION}\"
   SHA1:    \"${x_SHA1}\"
@@ -127,7 +127,7 @@ function(hunter_download_server_url)
   set(download_command "${download_command} --VERSION \"${x_VERSION}\" ")
   set(download_command "${download_command} --SHA1 \"${x_SHA1}\" ")
   set(download_command "${download_command} --URL \"${x_URL}\"")
-  hunter_status_print("DOWNLOAD_SERVER: download with maintenance-script:
+  hunter_status_debug("DOWNLOAD_SERVER: download with maintenance-script:
   ${download_command}")
 
   # set output_var to found definition

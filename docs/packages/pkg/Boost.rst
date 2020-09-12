@@ -12,7 +12,7 @@ Boost
     find_package(Boost CONFIG REQUIRED)
     target_link_libraries(... Boost::boost)
 
--  `Example <https://github.com/ruslo/hunter/blob/master/examples/Boost/CMakeLists.txt>`__
+-  `Example <https://github.com/cpp-pm/hunter/blob/master/examples/Boost/CMakeLists.txt>`__
 
 .. code-block:: cmake
 
@@ -23,13 +23,13 @@ Boost
 
 Examples:
 
-- `Boost-uuid <https://github.com/ruslo/hunter/blob/master/examples/Boost-uuid/CMakeLists.txt>`__
-- `Boost-system <https://github.com/ruslo/hunter/blob/master/examples/Boost-system/CMakeLists.txt>`__
-- `Boost-iostreams <https://github.com/ruslo/hunter/blob/master/examples/Boost-iostreams/CMakeLists.txt>`__
-- `Boost-filesystem <https://github.com/ruslo/hunter/blob/master/examples/Boost-filesystem/CMakeLists.txt>`__
-- `Boost-math <https://github.com/ruslo/hunter/blob/master/examples/Boost-math/CMakeLists.txt>`__
-- `Boost-contract <https://github.com/ruslo/hunter/blob/master/examples/Boost-contract/CMakeLists.txt>`__
-- `Boost-stacktrace <https://github.com/ruslo/hunter/blob/master/examples/Boost-stacktrace/CMakeLists.txt>`__
+- `Boost-uuid <https://github.com/cpp-pm/hunter/blob/master/examples/Boost-uuid/CMakeLists.txt>`__
+- `Boost-system <https://github.com/cpp-pm/hunter/blob/master/examples/Boost-system/CMakeLists.txt>`__
+- `Boost-iostreams <https://github.com/cpp-pm/hunter/blob/master/examples/Boost-iostreams/CMakeLists.txt>`__
+- `Boost-filesystem <https://github.com/cpp-pm/hunter/blob/master/examples/Boost-filesystem/CMakeLists.txt>`__
+- `Boost-math <https://github.com/cpp-pm/hunter/blob/master/examples/Boost-math/CMakeLists.txt>`__
+- `Boost-contract <https://github.com/cpp-pm/hunter/blob/master/examples/Boost-contract/CMakeLists.txt>`__
+- `Boost-stacktrace <https://github.com/cpp-pm/hunter/blob/master/examples/Boost-stacktrace/CMakeLists.txt>`__
 
 List of components and availability (other libraries are header-only):
 
@@ -87,6 +87,15 @@ config file (``boost/config/user.hpp``):
     #define BOOST_REGEX_MATCH_EXTRA
     #define BOOST_MPL_CFG_NO_PREPROCESSED_HEADERS
     #define BOOST_MPL_LIMIT_LIST_SIZE 3
+
+  - Option ``USE_CONFIG_FROM_BOOST=ON`` use the package configuration file provided 
+    by the boost project.
+    Since boost version 1.70.0, the boost project provide a well maintained package 
+    configuration file for use with find_package's config mode.
+    See the difference between following example:
+    - `Boost-log <https://github.com/cpp-pm/hunter/blob/master/examples/Boost-log/CMakeLists.txt>`__
+    - `Boost-log-usingBoostConfig <https://github.com/cpp-pm/hunter/blob/master/examples/Boost-log-usingBoostConfig/CMakeLists.txt>`__
+
 
 Python
 ------
@@ -149,6 +158,27 @@ Example for Python 3:
     else()
       find_package(Boost CONFIG REQUIRED python36)
     endif()
+
+
+Python NumPy
+------------
+
+To build the NumPy plugin for Boost Python use option ``HUNTER_ENABLE_BOOST_PYTHON_NUMPY=True``.
+This will require ``pip_numpy`` and therefore ``hunter_venv``, see their docs for details and
+requirements.
+
+Example:
+
+.. code-block:: cmake
+
+    # config.cmake
+    hunter_config(
+      Boost
+      VERSION ${HUNTER_Boost_VERSION}
+      CMAKE_ARGS
+      PYTHON_VERSION=${PYTHON_VERSION}
+      HUNTER_ENABLE_BOOST_PYTHON_NUMPY=True
+    )
 
 Math
 ----

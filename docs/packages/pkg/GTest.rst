@@ -14,8 +14,8 @@ GTest
 -  `Hunterized <https://github.com/hunter-packages/googletest>`__ (`old
    repo <https://github.com/hunter-packages/gtest>`__)
 -  `Dev branch <https://github.com/ruslo/hunter/tree/gtest>`__
--  `Versions <https://github.com/ruslo/hunter/blob/master/cmake/projects/GTest/hunter.cmake>`__
--  `Example <https://github.com/ruslo/hunter/blob/master/examples/GTest/CMakeLists.txt>`__
+-  `Versions <https://github.com/cpp-pm/hunter/blob/master/cmake/projects/GTest/hunter.cmake>`__
+-  `Example <https://github.com/cpp-pm/hunter/blob/master/examples/GTest/CMakeLists.txt>`__
 -  Added by `Knitschi <https://github.com/Knitschi>`__
    (`pr-306 <https://github.com/ruslo/hunter/pull/306>`__)
 
@@ -24,7 +24,7 @@ GTest
     hunter_add_package(GTest)
     find_package(GTest CONFIG REQUIRED)
 
-    target_link_libraries(foo GTest::main) # GTest::gtest will be linked automatically
+    target_link_libraries(foo GTest::gtest_main) # GTest::gtest will be linked automatically
     target_link_libraries(boo GTest::gtest)
 
 Bugs
@@ -40,7 +40,7 @@ GMock
 =====
 
 .. |hunter| image:: https://img.shields.io/badge/hunter-v0.12.42-blue.svg
-  :target: https://github.com/ruslo/hunter/releases/tag/v0.12.42
+  :target: https://github.com/cpp-pm/hunter/releases/tag/v0.12.42
   :alt: Hunter v0.12.42
 
 - Available since |hunter|
@@ -54,7 +54,7 @@ available in these cases.
 .. code-block:: cmake
 
     hunter_add_package(GTest)
-    find_package(GMock CONFIG REQUIRED)
+    find_package(GTest CONFIG REQUIRED)
 
-    # GMock::gmock and GTest::main will be linked automatically
-    target_link_libraries(foo GMock::main)
+    # GMock::gmock and GTest::gtest will be linked automatically
+    target_link_libraries(foo GTest::gmock_main)

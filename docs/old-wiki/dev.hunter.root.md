@@ -16,7 +16,7 @@ Where `hunter-id` is the first 7 digits of `SHA1` of archive (i.e. first 7 digit
 
 However for development purposes like [adding new package][4] there is git-based functionality in `HunterGate`. Do clone and set [HUNTER_ROOT][5] environment variable:
 ```bash
-> git clone https://github.com/ruslo/hunter
+> git clone https://github.com/cpp-pm/hunter
 > export HUNTER_ROOT="`pwd`/hunter"
 ```
 
@@ -57,13 +57,13 @@ To avoid such problems script `jenkins.py` can be used. This script will pack cu
 Python 3.4.3
 
 # download build.py script
-> git clone https://github.com/ruslo/polly
+> git clone https://github.com/cpp-pm/polly
 > export PATH="`pwd`/polly/bin:$PATH"
 > which build.py
 /.../polly/bin/build.py
 
 # clone Hunter repository
-> git clone https://github.com/ruslo/hunter
+> git clone https://github.com/cpp-pm/hunter
 > cd hunter
 
 # run build for some package, like GTest
@@ -76,7 +76,7 @@ Python 3.4.3
 -- [hunter]   -> /.../_testing/Hunter/_Base/Download/Hunter/unknown/f055021
 ```
 
-About `build.py` and toolchains: [link](https://github.com/ruslo/polly#buildpy)
+About `build.py` and toolchains: [link](https://github.com/cpp-pm/polly#buildpy)
 
 See `jenkins.py --help` for more options:
 * `--nocreate` will not pack new Hunter archive but reuse old one (`_testing/hunter.tar.gz`). This may be useful for testing several packages one-by-one. Also it means that any new changes in Hunter internal modules will not be used.
@@ -84,8 +84,8 @@ See `jenkins.py --help` for more options:
 * `--clear-except-download` remove `_Base/<hunter-id>` and `_Base/Cache` directories but keep `_Base/Download`. This may be helpful for doing cleanup but will save archives with sources for future testing. Note that there is no need to enter full option name, i.e. `./jenkins.py --clear-except` will work fine too
 
 [1]: https://github.com/ruslo/hunter#first-step
-[2]: https://github.com/hunter-packages/gate
+[2]: https://github.com/cpp-pm/gate
 [3]: https://github.com/ruslo/hunter
 [4]: https://github.com/ruslo/hunter/wiki/usr.adding.new.package
-[5]: https://github.com/hunter-packages/gate#effects
+[5]: https://github.com/cpp-pm/gate#effects
 [6]: https://github.com/ruslo/hunter/wiki/dev.modules#hunter_cacheable

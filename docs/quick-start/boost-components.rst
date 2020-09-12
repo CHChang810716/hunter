@@ -24,7 +24,7 @@ Copy `HunterGate`_ module to your project and include it:
 .. code-block:: none
 
   > mkdir cmake
-  > wget https://raw.githubusercontent.com/hunter-packages/gate/master/cmake/HunterGate.cmake -O cmake/HunterGate.cmake
+  > wget https://raw.githubusercontent.com/cpp-pm/gate/master/cmake/HunterGate.cmake -O cmake/HunterGate.cmake
 
 .. code-block:: cmake
 
@@ -38,7 +38,7 @@ this repository** in general, see `notes`_):
   :emphasize-lines: 2, 3
 
   HunterGate(
-      URL "https://github.com/ruslo/hunter/archive/v0.16.15.tar.gz"
+      URL "https://github.com/cpp-pm/hunter/archive/v0.16.15.tar.gz"
       SHA1 "6974c2150fc0d3b09de3ad1efcbf15d360647ffa"
   )
 
@@ -72,7 +72,7 @@ Summarize:
 
   include("cmake/HunterGate.cmake")
   HunterGate(
-      URL "https://github.com/ruslo/hunter/archive/v0.10.9.tar.gz"
+      URL "https://github.com/cpp-pm/hunter/archive/v0.10.9.tar.gz"
       SHA1 "53b198e364dc7bc8360fc545f798563229bd7e20"
   )
 
@@ -92,6 +92,6 @@ Build it:
   > cmake --build _builds --config Release
 
 .. _HUNTER_ROOT: https://github.com/ruslo/hunter/wiki/usr.variables#hunter_root
-.. _other options: https://github.com/hunter-packages/gate#effects
-.. _HunterGate: https://github.com/hunter-packages/gate
-.. _notes: https://github.com/hunter-packages/gate#notes
+.. _other options: https://github.com/cpp-pm/gate#effects
+.. _HunterGate: https://github.com/cpp-pm/gate
+.. _notes: https://github.com/cpp-pm/gate#notes

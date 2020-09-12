@@ -76,13 +76,13 @@ HUNTER_ROOT
   Hunter packages to default location
 * You can set :ref:`environment variable <env hunter root>`
   with the same name to avoid specifying it for every project
-* See `HunterGate <https://github.com/hunter-packages/gate#effects>`__
+* See `HunterGate <https://github.com/cpp-pm/gate#effects>`__
 
 .. warning::
 
   If you manually cloned Hunter repository for development purposes the values
   of ``URL`` and ``SHA1`` of ``HunterGate`` will be ignored, see
-  `notes <https://github.com/hunter-packages/gate#notes>`__ and
+  `notes <https://github.com/cpp-pm/gate#notes>`__ and
   `testing <https://github.com/ruslo/hunter/wiki/dev.hunter.root>`__ hints.
 
 HUNTER_STATUS_PRINT
@@ -424,7 +424,7 @@ HUNTER_BINARY_DIR
 
 * Use external directory ``HUNTER_BINARY_DIR`` for building external projects.
   This variable can be used to fix
-  `"path too long" <https://docs.hunter.sh/en/latest/reference/errors/error.external.build.failed.html#windows>`__ error on windows
+  `"path too long" <https://hunter.readthedocs.io/en/latest/reference/errors/error.external.build.failed.html#windows>`__ error on windows
 
 .. _hunter disable install:
 

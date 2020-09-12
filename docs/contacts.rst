@@ -13,18 +13,29 @@ Contacts
 Public
 ======
 
-* Project is **closed** for public contributions
+* Feel free to open a new `issue`_ if you want to ask a question
+* Public chat room on Gitter: https://gitter.im/cpp-pm/community
 
 Private
 =======
 
-* Write me at ruslan_baratov@yahoo.com
-* Private chat room on Gitter: https://gitter.im/ruslo
+* Private chat room on Gitter: https://gitter.im/rbsheth
 
-Hire
-====
+.. _issue: https://github.com/cpp-pm/hunter/issues/new
 
-I’m available for hire as a freelance developer for all types of Hunter
-development (add/maintain/update package, fix bugs, design/implement
-new features, etc.) or CMake development (introduce configuration from
-scratch, refactor existing code, hunterize, etc.).
+Please don't
+============
+
+- Please use private channels only if you have sensible or private information
+  to share, do use public channels otherwise.
+
+- Please do not cross-post. Do not send the same messages to all channels.
+
+- Please avoid adding messages to closed issues unless it's absolutely
+  necessary. If the issue is closed then it means that problem was resolved
+  for original author or author lost interest in it. Please report a new issue
+  with your details and fresh setup instead.
+
+- Please don't spam channels with uninformative messages such as
+  "+1", "me too!", "any updates?!", "please please fix it!", etc.
+  Please use `GitHub reactions <https://github.blog/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/>`__ instead.

@@ -10,16 +10,16 @@ fmt
 ===
 
 .. |hunter| image:: https://img.shields.io/badge/hunter-v0.14.22-blue.svg
-  :target: https://github.com/ruslo/hunter/releases/tag/v0.14.22
+  :target: https://github.com/cpp-pm/hunter/releases/tag/v0.14.22
   :alt: Hunter v0.14.22
 
 -  `Official <https://github.com/fmtlib/fmt>`__
--  `Example <https://github.com/ruslo/hunter/blob/master/examples/fmt/CMakeLists.txt>`__
+-  `Example <https://github.com/cpp-pm/hunter/blob/master/examples/fmt/CMakeLists.txt>`__
 - Available since |hunter|
 -  Added by `Dmitry Panteleev <https://github.com/dpantele>`__
    (`pr-413 <https://github.com/ruslo/hunter/pull/413>`__)
 -  `Testing
-   branch <https://github.com/ingenue/hunter/branches/all?utf8=%E2%9C%93&query=fmt>`__
+   branch <https://github.com/cpp-pm/hunter-testing/branches/all?utf8=%E2%9C%93&query=fmt>`__
 
 .. code-block:: cmake
 

@@ -15,19 +15,19 @@ Examples of such packages:
 * :ref:`pkg.flatbuffers`
 
   * https://github.com/google/flatbuffers
-  * See `flatbuffers/hunter.cmake <https://github.com/ruslo/hunter/blob/08a6cbcf06bb5934b6b18aa1f2028cf56a1063b7/cmake/projects/flatbuffers/hunter.cmake#L23-L32>`__
+  * See `flatbuffers/hunter.cmake <https://github.com/cpp-pm/hunter/blob/08a6cbcf06bb5934b6b18aa1f2028cf56a1063b7/cmake/projects/flatbuffers/hunter.cmake#L23-L32>`__
   * Testing table: `AppVeyor <https://ci.appveyor.com/project/ingenue/hunter/build/1.0.3215>`__, `Travis <https://travis-ci.org/ingenue/hunter/builds/326881125>`__
 
 * :ref:`pkg.rocksdb`
 
   * https://github.com/facebook/rocksdb
-  * See `rocksdb/hunter.cmake <https://github.com/ruslo/hunter/blob/08a6cbcf06bb5934b6b18aa1f2028cf56a1063b7/cmake/projects/rocksdb/hunter.cmake#L19-L23>`__
+  * See `rocksdb/hunter.cmake <https://github.com/cpp-pm/hunter/blob/08a6cbcf06bb5934b6b18aa1f2028cf56a1063b7/cmake/projects/rocksdb/hunter.cmake#L19-L23>`__
   * Testing table: `Travis <https://travis-ci.org/ingenue/hunter/builds/326905326>`__
 
 * :ref:`pkg.nlohmann_json`
 
   * https://github.com/nlohmann/json
-  * See `nlohmann_json/hunter.cmake <https://github.com/ruslo/hunter/blob/08a6cbcf06bb5934b6b18aa1f2028cf56a1063b7/cmake/projects/nlohmann_json/hunter.cmake#L53-L58>`__
+  * See `nlohmann_json/hunter.cmake <https://github.com/cpp-pm/hunter/blob/08a6cbcf06bb5934b6b18aa1f2028cf56a1063b7/cmake/projects/nlohmann_json/hunter.cmake#L53-L58>`__
   * Testing table: `AppVeyor <https://ci.appveyor.com/project/ingenue/hunter/build/1.0.3217>`__, `Travis <https://travis-ci.org/ingenue/hunter/builds/326883658>`__
 
 Default behavior
@@ -241,7 +241,7 @@ Fork Hunter
 Hunter hosted on GitHub service where common way to add code is to fork
 project and create pull request.
 
-Fork `ruslo/hunter <https://github.com/ruslo/hunter>`__, clone
+Fork `cpp-pm/hunter <https://github.com/cpp-pm/hunter>`__, clone
 `your fork <https://github.com/hunterbox/hunter>`__ and initialize all
 submodules:
 
@@ -526,7 +526,7 @@ fastest way to check that everything is ready and working correctly.
 
 Script ``jenkins.py`` will package a temporary Hunter archive based on current
 state and build the specified example. This script uses
-`Polly <https://github.com/ruslo/polly>`__ toolchains.
+`Polly <https://github.com/cpp-pm/polly>`__ toolchains.
 
 Check you have Python 3 installed, clone Polly, add its ``bin`` folder to
 ``PATH`` environment variable, go back to Hunter repository and run test.
@@ -538,7 +538,7 @@ On Linux:
   > which python3
   /usr/bin/python3
 
-  > git clone https://github.com/ruslo/polly
+  > git clone https://github.com/cpp-pm/polly
   > cd polly
   [polly]> export PATH="`pwd`/bin:$PATH"
 
@@ -557,7 +557,7 @@ On Windows:
 
 .. code-block:: none
 
-  > git clone https://github.com/ruslo/polly
+  > git clone https://github.com/cpp-pm/polly
   > cd polly
   [polly]> set PATH=%CD%\bin;%PATH%
 
@@ -602,28 +602,28 @@ To understand what should be done next you need to understand the structure
 of branches.
 
 * Name: ``master``
-* Repository: https://github.com/ruslo/hunter
+* Repository: https://github.com/cpp-pm/hunter
 * Testing: Documentation on Linux
 
 In branch ``master`` there is only the ``.travis.yml`` file which will only check
 if the documentation is building:
 
-* https://github.com/ruslo/hunter/blob/ea9de264d6c1b05484bdc16a9967c3cb8cca9048/.travis.yml#L57-L59
+* https://github.com/cpp-pm/hunter/blob/ea9de264d6c1b05484bdc16a9967c3cb8cca9048/.travis.yml#L57-L59
 
-When you open a pull request to ``ruslo/hunter`` this test will automatically run.
+When you open a pull request to ``cpp-pm/hunter`` this test will automatically run.
 
 Branch pkg.template
 ===================
 
 * Name: ``pkg.template``
-* Repository: https://github.com/ingenue/hunter
+* Repository: https://github.com/cpp-pm/hunter-testing
 * Testing: *Nothing*
 
-In branch ``pkg.template`` of the repository ``ingenue/hunter`` there are
+In branch ``pkg.template`` of the repository ``cpp-pm/hunter-testing`` there are
 the **template** files ``.travis.yml`` and ``appveyor.yml``:
 
-* https://github.com/ingenue/hunter/blob/pkg.template/.travis.yml
-* https://github.com/ingenue/hunter/blob/pkg.template/appveyor.yml
+* https://github.com/cpp-pm/hunter-testing/blob/pkg.template/.travis.yml
+* https://github.com/cpp-pm/hunter-testing/blob/pkg.template/appveyor.yml
 
 All changes from ``master`` will go to ``pkg.template``. The only differences
 between ``master`` and ``pkg.template`` are the files ``.travis.yml``/``appveyor.yml``.
@@ -634,13 +634,13 @@ Branch pkg.<name>
 Branch for testing package ``<name>``.
 
 * Name: ``pkg.<name>``
-* Repository: https://github.com/ingenue/hunter
+* Repository: https://github.com/cpp-pm/hunter-testing
 * Testing: Package ``<name>`` on Windows/Linux/macOS hosts
 
-Real testing happens in ``pkg.<name>`` branch of ``ingenue/hunter`` repository.
+Real testing happens in ``pkg.<name>`` branch of ``cpp-pm/hunter-testing`` repository.
 E.g. branch ``pkg.gtest``:
 
-* https://github.com/ingenue/hunter/tree/pkg.gtest
+* https://github.com/cpp-pm/hunter-testing/tree/pkg.gtest
 * AppVeyor https://ci.appveyor.com/project/ingenue/hunter/build/1.0.2352
 * Travis https://travis-ci.org/ingenue/hunter/builds/274507515
 
@@ -654,13 +654,13 @@ Branch upload.<name>
 Branch for uploads.
 
 * Name: ``upload.<name>``
-* Repository: https://github.com/ingenue/hunter
+* Repository: https://github.com/cpp-pm/hunter-testing
 * Testing: Upload archives with binaries to cache-server
 
 After successful tests on ``pkg.<name>`` the branch ``upload.<name>`` will do
 uploads. E.g. branch ``upload.gtest``:
 
-* https://github.com/ingenue/hunter/tree/upload.gtest
+* https://github.com/cpp-pm/hunter-testing/tree/upload.gtest
 * https://ci.appveyor.com/project/ingenue/hunter/build/1.0.2287
 * https://travis-ci.org/ingenue/hunter/builds/270324624
 
@@ -686,7 +686,7 @@ Fetch the branch ``pkg.template`` and substitute all ``foo`` strings with
 
 .. code-block:: none
 
-  [hunter]> git remote add ci https://github.com/ingenue/hunter
+  [hunter]> git remote add ci https://github.com/cpp-pm/hunter-testing
   [hunter]> git fetch ci
   [hunter]> git checkout pkg.template
   [hunter]> git checkout -b pr.pkg.hunter_box_1
@@ -763,7 +763,7 @@ environment variable should help:
 
 Example:
 
-* https://github.com/ingenue/hunter/blob/05bd9cdbd03a5772302c65abb9119722b9b8e08c/appveyor.yml#L21-L24
+* https://github.com/cpp-pm/hunter-testing/blob/05bd9cdbd03a5772302c65abb9119722b9b8e08c/appveyor.yml#L21-L24
 
 Fix Travis log too long error
 =============================
@@ -787,7 +787,7 @@ Adding ``VERBOSE=0`` environment variable should help:
 
 Example:
 
-* https://github.com/ingenue/hunter/blob/92cb26bd0bc5eeb14525f56b3a068fb072e2e5a1/.travis.yml#L55-L59
+* https://github.com/cpp-pm/hunter-testing/blob/92cb26bd0bc5eeb14525f56b3a068fb072e2e5a1/.travis.yml#L55-L59
 
 Workaround for GCC internal error
 =================================
@@ -814,7 +814,7 @@ the :ref:`HUNTER_JOBS_NUMBER <hunter jobs number env>` environment variable:
 
 Example:
 
-* https://github.com/ingenue/hunter/blob/c1e12ba21940b8418d1e3d596b653ad3bf588e11/.travis.yml#L41-L45
+* https://github.com/cpp-pm/hunter-testing/blob/c1e12ba21940b8418d1e3d596b653ad3bf588e11/.travis.yml#L41-L45
 
 .. admonition:: Stackoverflow
 
@@ -843,7 +843,7 @@ Please follow these guidelines when disabling toolchains:
 
 If no working toolchain is left for ``.travis.yml`` or ``appveyor.yml`` then
 comment out everything and add ``TOOLCHAIN=dummy`` test (see
-`example <https://github.com/ingenue/hunter/blob/b52b18e7ac51cec76c63a61dd81195c5bfc2a160/appveyor.yml#L35-L41>`__).
+`example <https://github.com/cpp-pm/hunter-testing/blob/b52b18e7ac51cec76c63a61dd81195c5bfc2a160/appveyor.yml#L35-L41>`__).
 
 Go to branch ``pr.pkg.hunter_box_1`` with CI configs and commit this change
 there:
@@ -873,7 +873,7 @@ First push ``pr.pkg.hunter_box_1`` with CI configs:
   [hunter]> git checkout pr.pkg.hunter_box_1
   [hunter]> git push -u origin pr.pkg.hunter_box_1
 
-Open pull request to ``ingenue/hunter`` repository, to ``pkg.template``
+Open pull request to ``cpp-pm/hunter-testing`` repository, to ``pkg.template``
 branch:
 
 .. image:: /creating-new/images/pr-with-tests.png
@@ -974,7 +974,7 @@ via Hunter:
   |hunter|
 
   .. |hunter| image:: https://img.shields.io/badge/hunter-hunter_box_1-blue.svg
-    :target: https://docs.hunter.sh/en/latest/packages/pkg/hunter_box_1.html
+    :target: https://hunter.readthedocs.io/en/latest/packages/pkg/hunter_box_1.html
     :alt: Hunter
 
 Example:

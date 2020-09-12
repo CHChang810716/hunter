@@ -6,11 +6,11 @@ cmake_install.cmake
 install_manifest.txt
 
 # CMake temp build directories
-_builds
-*/_builds
-*/*/_builds
-*/*/*/_builds
-*/*/*/*/_builds
+_build*
+*/_build*
+*/*/_build*
+*/*/*/_build*
+*/*/*/*/_build*
 
 _testing
 
@@ -35,3 +35,5 @@ _Base
 CMakeSettings.json
 
 build/
+# Default vscode python virtual env folder
+env

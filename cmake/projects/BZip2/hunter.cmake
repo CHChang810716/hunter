@@ -54,6 +54,17 @@ hunter_add_version(
     11fb2b502a425ccc07142f869cce8b3bbae5f1ea
 )
 
+hunter_add_version(
+    PACKAGE_NAME
+    BZip2
+    VERSION
+    "1.0.8-p0"
+    URL
+    "https://github.com/cpp-pm/bzip2/archive/v1.0.8-p0.tar.gz"
+    SHA1
+    9125bd674fbe7c8169c8ea6a2a15a414a7dc2f86
+)
+
 hunter_cmake_args(
     BZip2
     CMAKE_ARGS
