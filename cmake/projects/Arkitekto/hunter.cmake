@@ -17,9 +17,9 @@ hunter_add_version(
 )
 hunter_add_version(
     PACKAGE_NAME Arkitekto
-    VERSION "1.0.1"
-    URL "https://github.com/CHChang810716/Arkitekto/archive/1.0.1.tar.gz"
-    SHA1 "bb06464603a44a958000d2de78117331c2636e83"
+    VERSION "1.0.2"
+    URL "https://github.com/CHChang810716/Arkitekto/archive/1.0.2.tar.gz"
+    SHA1 "651c70457fc364869bf3936ce0884b751c19be64"
 )
 
 
