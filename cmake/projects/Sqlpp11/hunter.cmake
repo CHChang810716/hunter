@@ -19,6 +19,16 @@ hunter_add_version(
     SHA1
     472f23489f9a063d2b9a492910ea59a36bc55263
 )
+hunter_add_version(
+    PACKAGE_NAME
+    Sqlpp11
+    VERSION
+    0.57-p1
+    URL
+    https://github.com/CHChang810716/sqlpp11/archive/v0.57-p1.tar.gz
+    SHA1
+    22b4a71d30cbadc520b59c6abbc17bcde2f01e50
+)
 
 hunter_cmake_args(Sqlpp11 CMAKE_ARGS 
   ENABLE_TESTS=OFF
