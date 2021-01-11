@@ -15,6 +15,12 @@ hunter_add_version(
     URL https://github.com/CHChang810716/libbcrypt/archive/1.0.0-h0.tar.gz
     SHA1 4813c45db12a0c9a828da8b86946a8c5652214e3
 )
+hunter_add_version(
+    PACKAGE_NAME bcrypt
+    VERSION 1.0.0-h1
+    URL https://github.com/CHChang810716/libbcrypt/archive/1.0.0-h1.tar.gz
+    SHA1 a0057f5d7b04283870faed9fbb4aae00dbec7a76
+)
 
 hunter_cmake_args(bcrypt CMAKE_ARGS 
   ENABLE_TESTS=OFF
