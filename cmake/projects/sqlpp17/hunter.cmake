@@ -19,6 +19,16 @@ hunter_add_version(
     SHA1
     b8b60e2c37ed78e2f25b6813249599a78884ab72
 )
+hunter_add_version(
+    PACKAGE_NAME
+    sqlpp17
+    VERSION
+    0.1.1-h0
+    URL
+    https://github.com/CHChang810716/sqlpp17/archive/0.1.1-h0.tar.gz
+    SHA1
+    04912f2a5ca524cffa1a468c6880cedc76137e74
+)
 
 hunter_cmake_args(sqlpp17 CMAKE_ARGS 
   ENABLE_TESTS=OFF
