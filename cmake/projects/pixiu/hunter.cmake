@@ -57,6 +57,12 @@ hunter_add_version(
     URL "https://github.com/CHChang810716/pixiu/archive/0.0.10-alpha.tar.gz"
     SHA1 "627e48617b5911cd2209ccd07ee23d61cff2cd37"
 )
+hunter_add_version(
+    PACKAGE_NAME pixiu
+    VERSION "0.0.12-alpha"
+    URL "https://github.com/CHChang810716/pixiu/archive/0.0.12-alpha.tar.gz"
+    SHA1 "01f2cc58e6f1881dc5da20b643369c6ae32a787a"
+)
 
 
 hunter_pick_scheme(DEFAULT url_sha1_cmake)
