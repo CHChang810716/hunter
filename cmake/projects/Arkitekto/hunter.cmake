@@ -21,6 +21,12 @@ hunter_add_version(
     URL "https://github.com/CHChang810716/Arkitekto/archive/1.0.2.tar.gz"
     SHA1 "651c70457fc364869bf3936ce0884b751c19be64"
 )
+hunter_add_version(
+    PACKAGE_NAME Arkitekto
+    VERSION "1.0.3"
+    URL "https://github.com/CHChang810716/Arkitekto/archive/1.0.3.tar.gz"
+    SHA1 "04977864cb4e02514b34e8f26285c7397f1d44fe"
+)
 
 
 hunter_pick_scheme(DEFAULT url_sha1_cmake)
