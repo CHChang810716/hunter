@@ -13,6 +13,17 @@ hunter_add_version(
     PACKAGE_NAME
     Libssh2
     VERSION
+    "1.9.0-p0"
+    URL
+    "https://github.com/cpp-pm/libssh2/archive/v1.9.0-p0.tar.gz"
+    SHA1
+    334509e288bee2e8fc3b5c85f3a3bfdd18b885e6
+)
+
+hunter_add_version(
+    PACKAGE_NAME
+    Libssh2
+    VERSION
     "1.7.0"
     URL
     "https://github.com/hunter-packages/libssh2/archive/libssh2-1.7.0-hunter-4.tar.gz"

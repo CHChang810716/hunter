@@ -3,12 +3,14 @@
 # Copyright (c) 2013, Ruslan Baratov
 # All rights reserved.
 
+# Try ./b2 --show-libraries to look for new libraries
 BOOST_LIBS="
     atomic
     chrono
+    container
     context
-    coroutine
     contract
+    coroutine
     date_time
     exception
     fiber
@@ -16,10 +18,12 @@ BOOST_LIBS="
     graph
     graph_parallel
     iostreams
+    json
     locale
     log
     math
     mpi
+    nowide
     program_options
     python
     random
@@ -31,6 +35,7 @@ BOOST_LIBS="
     test
     thread
     timer
+    type_erasure
     wave
 "
 

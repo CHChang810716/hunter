@@ -12,6 +12,13 @@ hunter_add_version(
   SHA1 e671b01b17c8cf785d95dd3aefa93e7cf31e56a5
   )
 
+hunter_add_version(
+  PACKAGE_NAME libxdg-basedir
+  VERSION "1.2.3"
+  URL "https://github.com/devnev/libxdg-basedir/archive/libxdg-basedir-1.2.3.tar.gz"
+  SHA1 41d495868197dc0db4b5b7337d4cb2d215497614
+  )
+
 hunter_configuration_types(libxdg-basedir CONFIGURATION_TYPES Release)
 hunter_pick_scheme(DEFAULT url_sha1_autogen_autotools)
 hunter_cacheable(libxdg-basedir)

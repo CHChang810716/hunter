@@ -21,17 +21,23 @@ hunter_add_version(
 hunter_configuration_types(libarchive CONFIGURATION_TYPES Release)
 hunter_pick_scheme(DEFAULT url_sha1_autotools)
 
+set(libarchive_dependencies
+    ZLIB
+    BZip2
+    lzma
+)
 hunter_cmake_args(
     libarchive
     CMAKE_ARGS
     PKGCONFIG_EXPORT_TARGETS=libarchive
     EXTRA_FLAGS=--without-iconv
+    DEPENDS_ON_PACKAGES=${libarchive_dependencies}
 )
 
 hunter_cacheable(libarchive)
 hunter_download(
     PACKAGE_NAME libarchive
-    PACKAGE_INTERNAL_DEPS_ID "1"
+    PACKAGE_INTERNAL_DEPS_ID "2"
     PACKAGE_UNRELOCATABLE_TEXT_FILES
     "lib/libarchive.la"
     "lib/pkgconfig/libarchive.pc"

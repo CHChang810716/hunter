@@ -30,6 +30,17 @@ hunter_add_version(
     583524ee8f08d0b036bfb4ad3566144b4c272965
 )
 
+hunter_add_version(
+    PACKAGE_NAME
+    breakpad
+    VERSION
+    0.0.0-12ecff3-p4
+    URL
+    "https://github.com/cpp-pm/breakpad/archive/refs/tags/v0.0.0-12ecff3-p4.tar.gz"
+    SHA1
+    25a6638f1e2066a9fc854719ce658fc0447a8877
+)
+
 hunter_pick_scheme(DEFAULT url_sha1_cmake)
 hunter_cacheable(breakpad)
 hunter_download(PACKAGE_NAME breakpad)
