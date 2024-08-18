@@ -14,17 +14,6 @@ hunter_add_version(
     PACKAGE_NAME
     doctest
     VERSION
-    "1.1.4-hunter-1"
-    URL
-    "https://github.com/piribes/doctest/archive/1.1.4-hunter-1.tar.gz"
-    SHA1
-    684580f4cf1f40ca7750bea90facc4564a807c2a
-)
-
-hunter_add_version(
-    PACKAGE_NAME
-    doctest
-    VERSION
     "1.2.0"
     URL
     "https://github.com/onqtam/doctest/archive/1.2.0.tar.gz"
@@ -63,6 +52,17 @@ hunter_add_version(
     "https://github.com/onqtam/doctest/archive/2.4.4.tar.gz"
     SHA1
     d1baae099a165b231bb4fdd3637789f7465d873a
+)
+
+hunter_add_version(
+    PACKAGE_NAME
+    doctest
+    VERSION
+    "2.4.9"
+    URL
+    "https://github.com/doctest/doctest/archive/v2.4.9.tar.gz"
+    SHA1
+    9c2a6b805fb3d52a4eb0ea88da0f8b38cff4ebc0
 )
 
 hunter_cmake_args(doctest CMAKE_ARGS

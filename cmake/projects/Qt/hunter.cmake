@@ -24,7 +24,7 @@ hunter_add_version(
     VERSION
     "5.5.0"
     URL
-    "http://download.qt.io/official_releases/qt/5.5/5.5.0/single/qt-everywhere-opensource-src-5.5.0.7z"
+    "https://download.qt.io/new_archive/qt/5.5/5.5.0/single/qt-everywhere-opensource-src-5.5.0.7z"
     SHA1
     df2c0a7a20f219f921246b260df086600515955d
 )
@@ -209,17 +209,6 @@ hunter_add_version(
     PACKAGE_NAME
     Qt
     VERSION
-    "5.6.0-alpha"
-    URL
-    "http://download.qt.io/development_releases/qt/5.6/5.6.0-alpha/single/qt-everywhere-opensource-src-5.6.0-alpha.7z"
-    SHA1
-    d902b7df94219d2ed2f5c868839c85ce9daa056a
-)
-
-hunter_add_version(
-    PACKAGE_NAME
-    Qt
-    VERSION
     "5.9.1-p0"
     URL
     "https://github.com/hunter-packages/Qt/releases/download/v5.9.1-p0/hunter-5.9.1.7z"
@@ -233,7 +222,7 @@ hunter_add_version(
     VERSION
     "5.10.1"
     URL
-    "http://download.qt.io/archive/qt/5.10/5.10.1/single/qt-everywhere-src-5.10.1.tar.xz"
+    "https://download.qt.io/new_archive/qt/5.10/5.10.1/single/qt-everywhere-src-5.10.1.tar.xz"
     SHA1
     3d71e887287bdea664ac6f8db4aaa4a7d913be59
 )
@@ -244,7 +233,7 @@ hunter_add_version(
     VERSION
     "5.11.1"
     URL
-    "http://download.qt.io/archive/qt/5.11/5.11.1/single/qt-everywhere-src-5.11.1.tar.xz"
+    "https://download.qt.io/new_archive/qt/5.11/5.11.1/single/qt-everywhere-src-5.11.1.tar.xz"
     SHA1
     0ac866442a960d4038a51ba3096b2cc5d796b5ee
 )
@@ -255,7 +244,7 @@ hunter_add_version(
     VERSION
     "5.11.3"
     URL
-    "https://download.qt.io/archive/qt/5.11/5.11.3/single/qt-everywhere-src-5.11.3.tar.xz"
+    "https://download.qt.io/new_archive/qt/5.11/5.11.3/single/qt-everywhere-src-5.11.3.tar.xz"
     SHA1
     3f6c0df4fa7524ed11557ed55db35ef551cd2782
 )

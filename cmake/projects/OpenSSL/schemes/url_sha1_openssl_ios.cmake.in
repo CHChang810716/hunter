@@ -1,7 +1,7 @@
 # Copyright (c) 2013, 2015 Ruslan Baratov
 # All rights reserved.
 
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.5)
 project(Hunter)
 
 include(ExternalProject) # ExternalProject_Add
@@ -151,6 +151,7 @@ foreach(variant @IPHONEOS_ARCHS@ @IPHONESIMULATOR_ARCHS@)
       "${configure_opts}"
       "no-async"
       "--prefix=@HUNTER_PACKAGE_INSTALL_PREFIX@"
+      "--libdir=lib"
       "-arch ${variant}"
       "-isysroot ${SDK_ROOT}"
       BUILD_COMMAND

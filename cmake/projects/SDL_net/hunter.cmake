@@ -17,6 +17,17 @@ hunter_add_version(
         e8024bc53ab01189ede4ff159723e61afe9b53d4
 )
 
+hunter_add_version(
+        PACKAGE_NAME
+        SDL_net
+        VERSION
+        "2.2.0-p0"
+        URL
+        "https://github.com/cpp-pm/SDL_net/archive/v2.2.0-p0.tar.gz"
+        SHA1
+        7bd8e4ea0194ba49ff6d22cf7b325162495a458e
+)
+
 hunter_pick_scheme(DEFAULT url_sha1_cmake)
 hunter_cacheable(SDL_net)
 hunter_download(PACKAGE_NAME SDL_net)

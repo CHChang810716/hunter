@@ -1,7 +1,7 @@
 # Copyright (c) 2013, 2015 Ruslan Baratov
 # All rights reserved.
 
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.5)
 project(Hunter)
 
 include(ExternalProject) # ExternalProject_Add
@@ -46,6 +46,8 @@ elseif(MINGW)
   else()
     set(configure_command "./Configure" mingw)
   endif()
+elseif(EMSCRIPTEN)
+  set(configure_command AR=${CMAKE_AR} RANLIB=${CMAKE_RANLIB} "./config")
 else()
   set(configure_command "./config")
 endif()
@@ -106,6 +108,9 @@ elseif(RASPBERRY_PI)
   set(configure_opts "linux-generic32")
 elseif(OPENWRT)
   set(configure_opts "linux-generic32" "no-async")
+elseif(EMSCRIPTEN)
+  # disable features that will not work with emscripten
+  set(configure_opts "no-engine" "no-dso" "no-asm" "no-shared" "no-sse2" "no-srtp")
 endif()
 
 string(REGEX REPLACE "^ " "" CMAKE_C_FLAGS "${CMAKE_C_FLAGS}")
@@ -155,6 +160,7 @@ ExternalProject_Add(
     ${configure_command}
     ${configure_opts}
     "--prefix=@HUNTER_PACKAGE_INSTALL_PREFIX@"
+    "--libdir=lib"
     BUILD_COMMAND
     ${build_command}
     BUILD_IN_SOURCE

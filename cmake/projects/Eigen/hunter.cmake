@@ -17,6 +17,17 @@ hunter_add_version(
     PACKAGE_NAME
     Eigen
     VERSION
+    "3.4.0"
+    URL
+    "https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.tar.gz"
+    SHA1
+    d222db69a9e87d9006608e029d1039039f360b52
+)
+
+hunter_add_version(
+    PACKAGE_NAME
+    Eigen
+    VERSION
     "3.3.9"
     URL
     "https://gitlab.com/libeigen/eigen/-/archive/3.3.9/eigen-3.3.9.tar.gz"
@@ -187,7 +198,11 @@ endif()
 hunter_cmake_args(
     Eigen
     CMAKE_ARGS
+    # explicitly disable gfortran usage
+    CMAKE_Fortran_COMPILER=NOTFOUND
+    # no need for tests or docs to save build-time
     BUILD_TESTING=OFF
+    EIGEN_BUILD_DOC=OFF
     HUNTER_INSTALL_LICENSE_FILES=COPYING.MPL2
     ${_android_args}
 )

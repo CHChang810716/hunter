@@ -10,6 +10,51 @@ include(hunter_configuration_types)
 include(hunter_download)
 include(hunter_pick_scheme)
 include(hunter_report_broken_package)
+include(hunter_source_subdir)
+
+hunter_add_version(
+    PACKAGE_NAME
+    LLVM
+    VERSION
+    "13.0.1"
+    URL
+    "https://github.com/llvm/llvm-project/archive/llvmorg-13.0.1.tar.gz"
+    SHA1
+    FF95B6A8A507B334EE63C207FD6ADDDD794C19A3
+)
+
+hunter_add_version(
+    PACKAGE_NAME
+    LLVM
+    VERSION
+    "13.0.0"
+    URL
+    "https://github.com/llvm/llvm-project/archive/llvmorg-13.0.0.tar.gz"
+    SHA1
+    807949B6C957B1D93B707DB45CB6E7DFFC886FA1
+)
+
+hunter_add_version(
+    PACKAGE_NAME
+    LLVM
+    VERSION
+    "12.0.1"
+    URL
+    "https://github.com/llvm/llvm-project/archive/llvmorg-12.0.1.tar.gz"
+    SHA1
+    B608C40C5B946CE2D78C0EFA96754244FEBCF46B
+)
+
+hunter_add_version(
+    PACKAGE_NAME
+    LLVM
+    VERSION
+    "11.0.1"
+    URL
+    "https://github.com/llvm/llvm-project/archive/llvmorg-11.0.1.tar.gz"
+    SHA1
+    99290C28654EFE520247B7859ED45CF7BC895641
+)
 
 hunter_add_version(
     PACKAGE_NAME
@@ -87,6 +132,10 @@ hunter_add_version(
     SHA1
     c5287384d0b95ecb0fd7f024be2cdfb60cd94bc9
 )
+
+if(HUNTER_LLVM_VERSION VERSION_GREATER 6.0.1)
+    hunter_source_subdir(LLVM SOURCE_SUBDIR llvm)
+endif()
 
 hunter_cmake_args(
   LLVM

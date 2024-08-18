@@ -18,6 +18,12 @@ hunter_add_version(
     URL "https://github.com/kcat/openal-soft/archive/openal-soft-1.18.2.tar.gz"
     SHA1 "f819c6720c4beead7653ebc35fbb2c287a8970fc")
 
+hunter_add_version(
+    PACKAGE_NAME OpenAL
+    VERSION "1.23.1"
+    URL "https://github.com/kcat/openal-soft/archive/1.23.1.tar.gz"
+    SHA1 "db17e5ea24792b3fcbbb04d8f0b28e9d1e28ea7b")
+
 set(_hunter_openal_cmake_args)
 if(NOT BUILD_SHARED_LIBS)
     set(
@@ -34,8 +40,11 @@ hunter_cmake_args(
         ALSOFT_EXAMPLES=OFF
         ALSOFT_TESTS=OFF
         ALSOFT_CONFIG=OFF
+        ALSOFT_INSTALL_CONFIG=OFF
         ALSOFT_HRTF_DEFS=OFF
+        ALSOFT_INSTALL_HRTF_DATA=OFF
         ALSOFT_AMBDEC_PRESETS=OFF
+        ALSOFT_INSTALL_AMBDEC_PRESETS=OFF
         ALSOFT_EMBED_HRTF_DATA=OFF
         ${_hunter_openal_cmake_args}
 )

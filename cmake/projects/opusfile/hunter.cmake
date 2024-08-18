@@ -26,6 +26,17 @@ hunter_add_version(
     877447616c34b6dd7753ee1a883c713ca2f56773
 )
 
+hunter_add_version(
+    PACKAGE_NAME
+    opusfile
+    VERSION
+    0.12-p2
+    URL
+    "https://github.com/cpp-pm/opusfile/archive/v0.12-p2.tar.gz"
+    SHA1
+    b107f9c202672f7d37aca07bf7525a9d78231f66
+)
+
 hunter_cmake_args(
     opusfile
     CMAKE_ARGS

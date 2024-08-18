@@ -1,7 +1,7 @@
 # Copyright (c) 2016, Ruslan Baratov
 # All rights reserved.
 
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.5)
 project(Hunter)
 
 include(ExternalProject) # ExternalProject_Add
@@ -63,16 +63,27 @@ endif()
 string(COMPARE EQUAL "@HUNTER_MSVC_ARCH_TARGET@" "amd64" is_amd64)
 string(COMPARE EQUAL "@HUNTER_MSVC_ARCH_TARGET@" "arm64" is_arm64)
 if(is_amd64 OR is_arm64)
-  set(arch "VC-WIN64A")
+  if("${CMAKE_SYSTEM_NAME}" STREQUAL "WindowsStore")
+    set(arch "VC-WIN64A-ONECORE")
+  else()
+    set(arch "VC-WIN64A")
+  endif()
 else()
-  set(arch "VC-WIN32")
+  if("${CMAKE_SYSTEM_NAME}" STREQUAL "WindowsStore")
+    set(arch "VC-WIN32-ONECORE")
+  else() 
+    set(arch "VC-WIN32")
+  endif()
 endif()
 
 if(DEBUG_RUNTIME)
   set(arch "debug-${arch}")
 endif()
 
-if(ASM_SUPPORT)
+if("${CMAKE_SYSTEM_NAME}" STREQUAL "WindowsStore")
+  hunter_add_package(NASM) # set NASM_ROOT
+  set(opt "no-async")
+elseif(ASM_SUPPORT)
   hunter_add_package(NASM) # set NASM_ROOT
   set(opt "")
 else()
@@ -92,6 +103,12 @@ if (BUILD_SHARED_LIBS)
   set(shared "shared")
 else()
   set(shared "no-shared")
+endif()
+
+if("${CMAKE_SYSTEM_NAME}" STREQUAL "WindowsStore")
+  set(platform "store")
+else()
+  set(platform "")
 endif()
 
 set(openssl_dir "@HUNTER_PACKAGE_INSTALL_PREFIX@/ssl")
@@ -127,7 +144,7 @@ ExternalProject_Add(
     "@HUNTER_PACKAGE_INSTALL_PREFIX@"
         # not used, just avoid creating Install/<name> empty directory
     CONFIGURE_COMMAND
-    "@HUNTER_MSVC_VCVARSALL@" "@HUNTER_MSVC_ARCH@"
+    "@HUNTER_MSVC_VCVARSALL@" "@HUNTER_MSVC_ARCH@" ${platform}
     COMMAND
     "@CMAKE_COMMAND@" -P "@HUNTER_PACKAGE_BUILD_DIR@/configure_1_1_plus.cmake"
     COMMAND

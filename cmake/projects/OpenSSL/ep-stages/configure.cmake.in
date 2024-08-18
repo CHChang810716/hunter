@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 3.5)
 
 if(NOT "@NASM_ROOT@" STREQUAL "")
   set(ENV{PATH} "@NASM_ROOT@/bin;$ENV{PATH}")
@@ -9,7 +9,7 @@ if("@openssl_install_dir@" STREQUAL "")
 endif()
 
 execute_process(COMMAND
-  perl Configure @arch@ @opt@ "--prefix=@openssl_install_dir@" RESULT_VARIABLE result)
+  perl Configure @arch@ @opt@ "--prefix=@openssl_install_dir@" "--libdir=lib" RESULT_VARIABLE result)
 
 if(NOT result EQUAL 0)
   message(FATAL_ERROR "OpenSSL configure failed: ${result}")
